@@ -5,13 +5,14 @@ let asientos: number[] = new Array(cantidadAsientos);
 let indice: number = 0;
 let totalVacias: number = 0;
 let totalOcupadas: number = 0;
-let vacias: boolean = true; //1
-let ocupadas: boolean = false; //0
+let ocupadas: boolean = true; //1
+let vacias: boolean = false; //0
 
-function isEmptySeat(
-  vacias: boolean = true,
-  ocupadas: boolean = false
-): number {
+// paso a number
+//let convp1 = integer.parseInt(ocupadas);
+//let convp2 = integer.parseInt(vacias);
+
+function isEmptySeat(ocupadas: boolean = true, vacias: boolean = false) {
   return Math.floor(Math.random() * 10);
 }
 
@@ -20,9 +21,7 @@ for (indice = 0; indice < cantidadAsientos; indice++) {
 
   if (true) {
     totalOcupadas += 1;
-  } else if (false) {
-    totalVacias += 1;
-  }
+  } else totalVacias += 1;
 }
-console.log("Butacas vacias : ", totalVacias);
 console.log("Butacas ocupadas : ", totalOcupadas);
+console.log("Butacas vacias : ", totalVacias);
