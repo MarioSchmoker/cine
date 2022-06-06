@@ -1,25 +1,23 @@
 let cantidadAsientos: number = Number(
   prompt(`Ingrese la cantidad de Asientos: `)
 );
-let asientos: number[] = new Array(cantidadAsientos);
-let indice: number = 0;
+let ArrayAsientos: boolean[] = new Array(cantidadAsientos);
+let indice: number;
 let totalVacias: number = 0;
 let totalOcupadas: number = 0;
-let ocupadas: boolean = true; //1
-let vacias: boolean = false; //0
+let vAsientos: number;
 
-// paso a number
-//let convp1 = integer.parseInt(ocupadas);
-//let convp2 = integer.parseInt(vacias);
-
-function isEmptySeat(ocupadas: boolean = true, vacias: boolean = false) {
-  return Math.floor(Math.random() * 10);
+function cargarArregloButacas(vAsientos: number, cantidadAsientos: number) {
+  for (indice = 0; indice < cantidadAsientos; indice++) {
+    vAsientos[indice] = Math.random() < 0.5;
+  }
+  return vAsientos;
 }
 
-for (indice = 0; indice < cantidadAsientos; indice++) {
-  asientos[indice] = isEmptySeat(true, false);
+console.log(cargarArregloButacas(ArrayAsientos, cantidadAsientos));
 
-  if (true) {
+for (indice = 0; indice < cantidadAsientos; indice++) {
+  if (ArrayAsientos[indice] == true) {
     totalOcupadas += 1;
   } else totalVacias += 1;
 }
