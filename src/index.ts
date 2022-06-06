@@ -1,23 +1,25 @@
 let cantidadAsientos: number = Number(
   prompt(`Ingrese la cantidad de Asientos: `)
 );
-let ArrayAsientos: boolean[] = new Array(cantidadAsientos);
+let arrayAsientos: boolean[] = new Array(cantidadAsientos);
 let indice: number;
 let totalVacias: number = 0;
 let totalOcupadas: number = 0;
-let vAsientos: number;
 
-function cargarArregloButacas(vAsientos: number, cantidadAsientos: number) {
+function cargarArregloButacas(arrayAsientos: boolean[], cantidadAsientos: number) {
   for (indice = 0; indice < cantidadAsientos; indice++) {
-    vAsientos[indice] = Math.random() < 0.5;
+    arrayAsientos[indice] = Boolean(Math.floor(Math.random()*2));
   }
-  return vAsientos;
+  return arrayAsientos;
 }
 
-console.log(cargarArregloButacas(ArrayAsientos, cantidadAsientos));
+//ojo, cuando ejecutas un console.log, ejecutas lo de adentro es decir que en tu code despues de cargar las variables
+//empieza a ejecutarse aca
+
+console.log(cargarArregloButacas(arrayAsientos, cantidadAsientos));
 
 for (indice = 0; indice < cantidadAsientos; indice++) {
-  if (ArrayAsientos[indice] == true) {
+  if (arrayAsientos[indice] === true) {
     totalOcupadas += 1;
   } else totalVacias += 1;
 }
