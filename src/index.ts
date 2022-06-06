@@ -6,15 +6,15 @@ let indice: number;
 let totalVacias: number = 0;
 let totalOcupadas: number = 0;
 
-function cargarArregloButacas(arrayAsientos: boolean[], cantidadAsientos: number) {
+function cargarArregloButacas(
+  arrayAsientos: boolean[],
+  cantidadAsientos: number
+) {
   for (indice = 0; indice < cantidadAsientos; indice++) {
-    arrayAsientos[indice] = Boolean(Math.floor(Math.random()*2));
+    arrayAsientos[indice] = Boolean(Math.floor(Math.random() * 2));
   }
   return arrayAsientos;
 }
-
-//ojo, cuando ejecutas un console.log, ejecutas lo de adentro es decir que en tu code despues de cargar las variables
-//empieza a ejecutarse aca
 
 console.log(cargarArregloButacas(arrayAsientos, cantidadAsientos));
 
